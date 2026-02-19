@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen Patil | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html{
+  scroll-behavior:smooth;
+}
+
+/* SOCIAL LINKS */
+.social-links{
+  margin-top:20px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  text-decoration:none;
+  color:#38bdf8;
+  font-weight:500;
+  font-size:0.95rem;
+  transition:.2s;
+}
+
+.social-links a:hover{
+  color:#7dd3fc;
+}
+
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color:#e5e7eb;
+  line-height:1.6;
+}
+
+/* ===== GLOBAL LAYOUT ===== */
+.section{
+  padding:100px 20px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(15,23,42,0.7);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar h3{
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+.nav-links a{
+  color:#e5e7eb;
+  text-decoration:none;
+  margin-left:28px;
+  font-size:.95rem;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#38bdf8;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:140px 20px 80px;
+}
+
+.hero-content{
+  max-width:1100px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:2.8rem;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+
+.hero h3{
+  font-weight:400;
+  color:#94a3b8;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:520px;
+  color:#cbd5e1;
+}
+
+.hero a{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 26px;
+  border-radius:10px;
+  background:#38bdf8;
+  color:#020617;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.hero a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(56,189,248,0.35);
+}
+
+/* ===== AVATAR ===== */
+.avatar{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3rem;
+  font-weight:700;
+  color:#020617;
+  margin:auto;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== ABOUT ===== */
+.about-box{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about-box h2{
+  margin-bottom:15px;
+}
+
+/* ===== SKILLS ===== */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+
+.skill-card{
+  background:#1e293b;
+  padding:28px;
+  border-radius:16px;
+  transition:.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.skill-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.35);
+}
+
+.skill-card h3{
+  margin-bottom:10px;
+  color:#38bdf8;
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid{
+  display:grid;
+  gap:25px;
+  margin-top:30px;
+}
+
+
+.project{
+  background:#1e293b;
+  padding:28px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.05);
+  transition:.3s;
+}
+
+.project:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.35);
+}
+
+.project h3{
+  margin-bottom:10px;
+}
+
+.project a{
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ===== CONTACT ===== */
+form{
+  max-width:520px;
+  margin-top:25px;
+}
+
+input,textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border:none;
+  border-radius:10px;
+  background:#0f172a;
+  color:#e5e7eb;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+input:focus,textarea:focus{
+  outline:none;
+  border-color:#38bdf8;
+}
+
+button{
+  background:#38bdf8;
+  border:none;
+  padding:12px 28px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  box-shadow:0 8px 20px rgba(56,189,248,0.35);
+  transform:translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#94a3b8;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .hero-content,
+  .about-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero p{
+    margin:auto;
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+/* CONTACT BUTTONS */
+.contact-buttons{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+  flex-wrap:wrap;
+  justify-content:flex-start;   /* LEFT align for desktop */
+}
+
+@media(max-width:600px){
+
+  /* center hero content */
+  .hero-content{
+    text-align:center;
+  }
+
+  /* center resume button */
+  .hero a{
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* center social buttons */
+  .contact-buttons{
+    justify-content:center;
+    flex-direction:column;   /* stack vertically */
+    align-items:center;
+    gap:14px;
+  }
+
+  /* equal width buttons */
+  .contact-buttons a{
+    width:220px;
+    justify-content:center;
+  }
+
+}
+
+
+
+.contact-buttons a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  color:#022c43;
+  padding:14px 26px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+.contact-buttons a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.35);
+}
+
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider{
+  height:1px;
+  width:100%;
+  background:linear-gradient(to right, transparent, rgba(56,189,248,0.6), transparent);
+  margin:80px auto;
+}
+
+@media(max-width:600px){
+  .hero h1{
+    font-size:2rem;
+  }
+}
+@media(max-width:600px){
+  .contact-buttons{
+    justify-content:center;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <h3>Praveen</h3>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+<!-- HERO -->
+<section id="home" class="hero">
+<div class="hero-content">
+<div>
+<h1>Turning <span style="color:#ffd86f">Data</span> & Code into Impact</h1>
+<h3>Data Analyst • Frontend Developer • Aspiring Data Scientist</h3>
+<p>I design responsive and user-friendly web interfaces while analyzing data to uncover meaningful insights. I work with modern frontend technologies and data tools, and I’m currently expanding my expertise in data science to build intelligent, data-driven solutions.
+</p>
+<br>
+<a href="praveenresume.pdf" target="_blank">📄 Download Resume</a>
+
+<div class="contact-buttons">
+  <a href="mailto:praveenpatil2709@gmail.com">📧 Email</a>
+  <a href="https://www.linkedin.com/in/praveen-patil27" target="_blank">🔗 LinkedIn</a>
+  <a href="https://github.com/PRAVEEN-PATIL27" target="_blank">💻 GitHub</a>
+</div>
+</div>
+
+<div>
+<div class="avatar">PP</div>
+<h3 style="text-align:center;margin-top:15px;">Praveen Patil</h3>
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<div class="container about-box">
+<div class="avatar">PP</div>
+<div>
+<h2>About Me</h2>
+<p>
+I am a BCA graduate passionate about frontend development and data analysis. I build responsive, user-friendly interfaces and transform data into meaningful insights that support smarter decision-making.
+</p>
+
+<p>
+With hands-on experience in HTML, CSS, JavaScript, SQL, and visualization tools, I continuously enhance my skills through practical projects. I am currently learning data science to create intelligent, data-driven solutions.
+</p>
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+<div class="container">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<h3>Data Analysis</h3>
+<p>SQL, Excel, Visualization</p>
+</div>
+<div class="skill-card">
+<h3>Backend</h3>
+<p>Python, APIs, Database Design</p>
+</div>
+<div class="skill-card">
+<h3>Tools</h3>
+<p>Power BI, GitHub, MySQL</p>
+</div>
+<div class="skill-card">
+<h3>Soft Skills</h3>
+<p>Problem Solving, Teamwork</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+<div class="container">
+<h2>Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project">
+<h3>Insurance Data Analysis</h3>
+<p>SQL analysis & dashboard insights.</p>
+<a href="https://github.com/PRAVEEN-PATIL27/INSURANCE-REPORT">GitHub</a>
+</div>
+
+<div class="project">
+<h3>Pizza Sales Analysis</h3>
+<p>Sales analytics & Power BI dashboards.</p>
+<a href="https://github.com/PRAVEEN-PATIL27/Pizza_Sales_Analysis">GitHub</a>
+</div>
+
+<div class="project">
+<h3>Coffee Shop Python App</h3>
+<p>Console-based ordering system.</p>
+<a href="https://github.com/PRAVEEN-PATIL27/COFFEECARTS">GitHub</a>
+</div>
+<div class="project">
+  <h3>Personal Portfolio Website</h3>
+  <p>
+    Designed and developed a responsive single-page portfolio to showcase my skills,
+    projects, and professional profile. Built with modern UI design principles and
+    optimized for all devices.
+  </p>
+  <a href="https://your-portfolio-link.com" target="_blank">🌐 Live Website</a><br>
+  <a href="https://github.com/PRAVEEN-PATIL27/portfolio-repo" target="_blank">GitHub</a>
+</div>
+
+
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="container">
+<h2>Contact Me</h2>
+<form id="contact-form">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send Message</button>
+  <p id="form-status"></p>
+</form>
+
+</div>
+</section>
+
+
+<footer style="text-align:center;padding:30px;opacity:.7;">
+© 2026 Praveen Patil
+</footer>
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();   // 🚫 STOP redirect
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch("https://formspree.io/f/mpqqwzon", {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      status.innerHTML = "✅ Message sent successfully!";
+      status.style.color = "#38bdf8";
+      form.reset();
+    } else {
+      status.innerHTML = "❌ Failed to send message.";
+      status.style.color = "red";
+    }
+  } catch (error) {
+    status.innerHTML = "❌ Something went wrong.";
+    status.style.color = "red";
+  }
+});
+</script>
+
+
+</body>
+</html>
